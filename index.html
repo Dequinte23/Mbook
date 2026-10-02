@@ -1,300 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MBook — Read Books for Free</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="MBook — discover and read books for free.">
+<title>MBook — Free Books</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f5f5;
-            color: #222;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        header {
-            background: #111;
-            color: white;
-            padding: 20px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-        }
+/* HEADER */
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
+header {
+    background: #111;
+    color: white;
+    padding: 18px 7%;
 
-        .hero {
-            background: #181818;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+}
 
-        .hero p {
-            font-size: 18px;
-            color: #ccc;
-            max-width: 600px;
-            margin: auto;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
 
-        .search-box {
-            margin: 30px auto 0;
-            max-width: 500px;
-        }
+/* HERO */
 
-        .search-box input {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-        }
+.hero {
+    background: #111;
+    color: white;
+    text-align: center;
 
-        .books {
-            padding: 50px 7%;
-        }
+    padding: 70px 20px;
+}
 
-        .books h2 {
-            text-align: center;
-            margin-bottom: 35px;
-            font-size: 32px;
-        }
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
 
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
+.hero p {
+    color: #ccc;
+    font-size: 18px;
 
-        .book {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
+    max-width: 600px;
+    margin: auto;
+}
 
-        .book-cover {
-            height: 300px;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            font-size: 18px;
-        }
+.search {
+    max-width: 500px;
+    margin: 30px auto 0;
+}
 
-        .book-info {
-            padding: 20px;
-        }
+.search input {
+    width: 100%;
 
-        .book-info h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+    padding: 16px;
 
-        .book-info p {
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 18px;
-        }
+    border: none;
+    border-radius: 8px;
 
-        .read-button {
-            display: inline-block;
-            background: #111;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    font-size: 16px;
+}
 
-        .about {
-            background: white;
-            padding: 60px 7%;
-            text-align: center;
-        }
+/* BOOK SECTION */
 
-        .about h2 {
-            margin-bottom: 15px;
-        }
+.books {
+    padding: 55px 7%;
+}
 
-        .about p {
-            max-width: 650px;
-            margin: auto;
-            line-height: 1.7;
-            color: #555;
-        }
+.books h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
 
-        footer {
-            background: #111;
-            color: #aaa;
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-        }
+.book-grid {
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 36px;
-            }
+    display: grid;
 
-            nav {
-                display: none;
-            }
-        }
-    </style>
+    grid-template-columns:
+    repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+/* BOOK CARD */
+
+.book {
+
+    background: white;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.10);
+
+    transition: 0.2s;
+}
+
+.book:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.cover {
+
+    width: 100%;
+    height: 330px;
+
+    object-fit: cover;
+
+    background: #ddd;
+}
+
+.book-info {
+
+    padding: 20px;
+}
+
+.book-info h3 {
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.book-info p {
+
+    color: #666;
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+}
+
+.buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+
+    display: inline-block;
+
+    padding: 11px 15px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+.read {
+
+    background: #111;
+
+    color: white;
+}
+
+.download {
+
+    background: #e9e9e9;
+
+    color: #111;
+}
+
+/* ABOUT */
+
+.about {
+
+    background: white;
+
+    text-align: center;
+
+    padding: 60px 7%;
+}
+
+.about h2 {
+
+    margin-bottom: 15px;
+}
+
+.about p {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+/* FOOTER */
+
+footer {
+
+    background: #111;
+
+    color: #aaa;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .hero h1 {
+
+        font-size: 35px;
+    }
+
+    nav {
+
+        display: none;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<header>
-    <div class="logo">📚 MBook</div>
 
-    <nav>
-        <a href="#books">Books</a>
-        <a href="#about">About</a>
-    </nav>
+<header>
+
+<div class="logo">
+📚 MBook
+</div>
+
+<nav>
+
+<a href="#books">
+Books
+</a>
+
+<a href="#about">
+About
+</a>
+
+</nav>
+
 </header>
+
 
 
 <section class="hero">
 
-    <h1>Welcome to MBook</h1>
+<h1>
+Welcome to MBook
+</h1>
 
-    <p>
-        Discover stories, explore new worlds, and read books for free.
-    </p>
+<p>
+Discover stories, explore new worlds,
+and read books for free.
+</p>
 
-    <div class="search-box">
-        <input
-            type="text"
-            id="search"
-            placeholder="Search for a book..."
-            onkeyup="searchBooks()"
-        >
-    </div>
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="Search for a book..."
+onkeyup="searchBooks()"
+>
+
+</div>
 
 </section>
+
 
 
 <section class="books" id="books">
 
-    <h2>📖 Our Books</h2>
-
-    <div class="book-grid" id="bookGrid">
-
-        <!-- BOOK 1 -->
-
-        <div class="book">
-
-            <div class="book-cover">
-                Book Cover
-            </div>
-
-            <div class="book-info">
-
-                <h3>Where I Am Not Supposed to Be</h3>
-
-                <p>
-                    A story about love, choices, life, and the places
-                    where we sometimes find ourselves unexpectedly.
-                </p>
-
-                <!-- CHANGE THIS LINK TO YOUR PDF -->
-
-                <a
-                    href="books/where-i-am-not-supposed-to-be.pdf"
-                    class="read-button"
-                    target="_blank"
-                >
-                    Read for Free
-                </a>
-
-            </div>
-
-        </div>
+<h2>
+📚 Our Books
+</h2>
 
 
-        <!-- FUTURE BOOKS CAN BE ADDED HERE -->
+<div class="book-grid" id="bookGrid">
 
-    </div>
+
+
+<!-- BOOK 1 -->
+
+<div class="book">
+
+<img
+src="covers/where-i-am-not-supposed-to-be.jpg"
+class="cover"
+alt="Where I Am Not Supposed to Be"
+>
+
+<div class="book-info">
+
+<h3>
+Where I Am Not Supposed to Be
+</h3>
+
+<p>
+A story about love, choices, life,
+and the places where we sometimes
+find ourselves unexpectedly.
+</p>
+
+
+<div class="buttons">
+
+<a
+href="books/where-i-am-not-supposed-to-be.pdf"
+class="button read"
+target="_blank"
+>
+📖 Read Online
+</a>
+
+<a
+href="books/where-i-am-not-supposed-to-be.pdf"
+class="button download"
+download
+>
+⬇️ Download
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- COPY THIS BLOCK FOR MORE BOOKS -->
+
+<div class="book">
+
+<img
+src="covers/book2.jpg"
+class="cover"
+alt="Book 2"
+>
+
+<div class="book-info">
+
+<h3>
+Your Second Book
+</h3>
+
+<p>
+Write your book description here.
+</p>
+
+<div class="buttons">
+
+<a
+href="books/book2.pdf"
+class="button read"
+target="_blank"
+>
+📖 Read Online
+</a>
+
+<a
+href="books/book2.pdf"
+class="button download"
+download
+>
+⬇️ Download
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
 
 </section>
+
 
 
 <section class="about" id="about">
 
-    <h2>About MBook</h2>
+<h2>
+About MBook
+</h2>
 
-    <p>
-        MBook is a place where readers can discover stories and
-        enjoy books for free. More books will be added as the library grows.
-    </p>
+<p>
+
+MBook is a free online library
+where readers can discover stories,
+explore new worlds and enjoy books
+from different authors.
+
+</p>
 
 </section>
 
 
+
 <footer>
 
-    © 2026 MBook. All rights reserved.
+© 2026 MBook
 
 </footer>
+
 
 
 <script>
 
 function searchBooks() {
 
-    let input = document
-        .getElementById("search")
-        .value
-        .toLowerCase();
+let input =
+document.getElementById("search")
+.value
+.toLowerCase();
 
-    let books = document.querySelectorAll(".book");
+let books =
+document.querySelectorAll(".book");
 
-    books.forEach(function(book) {
 
-        let title = book
-            .querySelector("h3")
-            .textContent
-            .toLowerCase();
+books.forEach(function(book) {
 
-        if (title.includes(input)) {
-            book.style.display = "";
-        } else {
-            book.style.display = "none";
-        }
+let title =
+book.querySelector("h3")
+.textContent
+.toLowerCase();
 
-    });
+
+if(title.includes(input)) {
+
+book.style.display = "";
+
+} else {
+
+book.style.display = "none";
+
+}
+
+});
 
 }
 
 </script>
 
+
 </body>
-                  </html>
+
+</html>
